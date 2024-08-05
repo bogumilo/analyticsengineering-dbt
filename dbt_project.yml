@@ -1,0 +1,39 @@
+name: "analyticsengineering"
+version: "1.0.0"
+config-version: 2
+
+profile: "analyticsengineering"
+
+model-paths: ["models"]
+analysis-paths: ["analysis"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  +labels:
+    created_by: dbt
+  analyticsengineering:
+    staging:
+      +schema: staging
+      +materialized: ephemeral
+    transform:
+      +schema: transform
+      +materialized: view
+    marts:
+      +schema: marts
+      +materialized: table
+
+seeds:
+  analyticsengineering:
+    dw:
+      schema: dw
+      +tags: ["seeds"]
+    raw:
+      schema: raw
+      +tags: ["seeds"]

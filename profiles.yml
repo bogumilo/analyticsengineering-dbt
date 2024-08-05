@@ -1,0 +1,16 @@
+analyticsengineering:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      threads: 8
+      # method: oauth
+      method: service-account
+      keyfile: "{{ env_var('DBT_GOOGLE_BIGQUERY_KEYFILE') }}"
+      project: "{{ env_var('PROJECT_ID') }}"
+      dataset: "{{ env_var('DATASET') }}"
+      timeout_seconds: 300
+      location: US
+      job_retries: 1
+      priority: interactive
+      # impersonate_service_account: "{{ env_var('BQ_SERVICE_ACCOUNT_CLIENT_EMAIL') }}"

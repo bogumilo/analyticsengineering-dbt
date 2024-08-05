@@ -1,0 +1,23 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: trailing-whitespace
+      - id: check-merge-conflict
+      - id: check-yaml
+        args: [--unsafe]
+  - repo: https://github.com/tconbeer/sqlfmt
+    rev: v0.23.2
+    hooks:
+      - id: sqlfmt
+  - repo: https://github.com/dbt-checkpoint/dbt-checkpoint
+    rev: v2.0.3
+    hooks:
+    - id: dbt-docs-generate
+      args: ["--cmd-flags", "++threads", "64"]
+    - id: check-model-has-properties-file
+      name: Check that all models are listed in a YAML file
+      files: ^models/intermediate/|^models/marts/|^models/staging/
+    - id: check-model-name-contract
+      args: [--pattern, "(base_|stg_).*"]
+      files: models/staging/
