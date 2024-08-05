@@ -1,0 +1,87 @@
+version: 2
+
+sources:
+  - name: raw
+    tables:
+      - name: source_document_event
+        columns:
+          - name: value_organisation_id
+          - name: key
+          - name: offset
+          - name: 'partition'
+          - name: region
+          - name: timestamp
+          - name: document_event_document_created_expiry_end
+          - name: document_event_document_created_expiry_start
+          - name: document_event_document_info_document_id
+          - name: document_event_document_info_document_type_id
+          - name: document_event_document_info_document_version_id
+          - name: document_event_document_info_subject_org_id
+          - name: document_event_document_info_subject_user_id
+          - name: document_event_requester_org_id
+          - name: document_event_requester_user_id
+          - name: document_event_document_renewed_expiry_end
+          - name: document_event_document_renewed_expiry_start
+          - name: event_datetime_utc
+          - name: event_name
+          - name: message_id
+          - name: service_name
+          - name: user_id
+          - name: _batch_date
+          - name: _timestamp
+          - name: document_event_document_info_expiry_end
+          - name: document_event_document_info_expiry_start
+          - name: document_event_document_info_media_ids
+          - name: document_event_operation
+
+      - name: source_typefield_event
+        columns:
+          - name: value_organisation_id
+          - name: key
+          - name: offset
+          - name: 'partition'
+          - name: region
+          - name: timestamp
+          - name: event_datetime_utc
+          - name: event_name
+          - name: message_id
+          - name: service_name
+          - name: type_modified_at
+          - name: type_operation
+          - name: type_org_id
+          - name: type_type_description
+          - name: type_type_domain
+          - name: type_type_id
+          - name: type_type_name
+          - name: type_type_type_category
+          - name: user_id
+          - name: _batch_date
+          - name: _timestamp
+          - name: type_fields_field_id
+          - name: type_fields_required
+          - name: index
+
+      - name: source_media_uploaded_event
+        columns:
+          - name: key
+          - name: offset
+          - name: 'partition'
+          - name: timestamp
+          - name: event_datetime_utc
+          - name: event_name
+          - name: media_uploaded_content_length
+          - name: media_uploaded_doc_id
+          - name: media_uploaded_doc_type
+          - name: media_uploaded_duration_in_ms
+          - name: media_uploaded_media_id
+          - name: media_uploaded_media_type
+          - name: media_uploaded_org_id
+          - name: media_uploaded_uploaded_at
+          - name: media_uploaded_user_id
+          - name: message_id
+          - name: organisation_id
+          - name: service_name
+          - name: user_id
+          - name: region
+          - name: _batch_date
+          - name: _timestamp
