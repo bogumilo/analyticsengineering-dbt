@@ -17,7 +17,7 @@ repos:
       args: ["--cmd-flags", "++threads", "64"]
     - id: check-model-has-properties-file
       name: Check that all models are listed in a YAML file
-      files: ^models/intermediate/|^models/marts/|^models/staging/
+      files: ^models/transform/|^models/marts/|^models/staging/
     - id: check-model-name-contract
-      args: [--pattern, "(base_|stg_).*"]
-      files: models/staging/
+      args: [--pattern, "(base_|stg_|trans_).*"]
+      files: models/staging/transform
